@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="ionic/css/ionic.min.css">
+        <title>NTPC</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+        <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        
+
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          
+				@viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   
+				@viewport { user-zoom: fixed ; min-zoom: 100% ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   
+				@viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        </style>
+
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+
+        <script src="cordova.js" id="xdkJScordova_"></script>
+        <script src="js/init-app.js"></script>
+        <script src="xdk/init-dev.js"></script>
+        <script type="application/javascript" src="ionic/js/ionic.bundle.js"></script>
+        <script type="application/javascript" src="js/index_init_services.js"></script>
+        <script src="js/app.js"></script>
+        
+    </head>
+
+    <body ng-app="myApp">
+        
+        <ion-nav-bar class="bar bar-header bar-positive" align-title="center">
+		   <ion-nav-back-button class="button">
+			  <i class="icon ion-arrow-left-c"></i> Back
+		   </ion-nav-back-button>
+		   <nav-bar-title class="title">NTPC App</nav-bar-title>
+		</ion-nav-bar>
+		
+                
+		<ion-nav-view>
+			<!-- Inject templates here -->
+        </ion-nav-view>
+        
+		<script type="text/ng-template" id="home">
+            <ion-view view-title="NTPC App">
+                <ion-content class="has-header">
+                    <a class="button button-full" ui-sref="state1">See Plants List</a>
+                </ion-content>
+            </ion-view>
+        </script>
+		
+        <script type="text/ng-template" id="state1" ng-controller="c1">
+            <ion-view view-title="Plants">
+                <ion-content class="has-header">
+                    <ion-list class="list">
+                        <ion-item class="item"><b>ID DESC</b></ion-item>
+                        <a class="item" ng-repeat="x in data" ui-sref="state2({id: x.id})">{{x.id + " " + x.desc}}</a>
+                    </ion-list>
+                </ion-content>
+            </ion-view>
+        </script>
+        
+        <script type="text/ng-template" id="state2" ng-controller="c2">
+            <ion-view view-title="Holidays">
+                <ion-content class="has-header">
+                    <ion-list class="list">
+                        <ion-item class="item"><b>DATE DESCRIPTION</b></ion-item>
+                        <a class="item" ng-repeat="x in data">{{x.date + " " + x.desc}}</a>
+                    </ion-list>
+					<br/>
+					<h4>{{id}}</h4>
+                </ion-content>
+            </ion-view>
+        </script>
+       
+        
+    </body>
+    
+</html>
