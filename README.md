@@ -32,6 +32,6 @@ What things you need to install the software on windows and how to install them
 
 ## Built With
 
-* Frontend : ```Angular2+```
-* Backend : ```PHP``` - ```MySQL```
 * Dev Environment : ```Windows``` - ```Apache Server``` - ```Intel XDK with Cordova Plugin```
+* Frontend : ```Angular```
+* Backend : ```PHP``` - ```MySQL```
