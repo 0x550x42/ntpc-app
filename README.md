@@ -33,5 +33,5 @@ What things you need to install the software on windows and how to install them
 ## Built With
 
 * Dev Environment : ```Windows``` - ```Apache Server``` - ```Intel XDK with Cordova Plugin```
-* Frontend : ```Angular```
+* Frontend : ```Angular``` - ```Ionic Framework```
 * Backend : ```PHP``` - ```MySQL```
